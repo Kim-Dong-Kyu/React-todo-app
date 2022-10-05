@@ -5,14 +5,16 @@ import{
 } from 'react-icons/md'
 import React from 'react';
 import './TodoListItem.scss'
-const TodoListItem = () => {
+import cn from 'classnames'
+
+const TodoListItem = ({todo}) => {
+
+    const {text , checked} = todo;
     return (
         <div className='TodoListItem'>
-            <div className='checkbox'>
-                <MdCheckBoxOutlineBlank/>
-                <div className='text'>
-                    할 일
-                </div>
+            <div className={cn('checkbox', {checked})}>
+                {checked ? <MdCheckBox></MdCheckBox> : <MdCheckBoxOutlineBlank></MdCheckBoxOutlineBlank>}
+                <div className='text'>{text}</div>             
             </div>
             <div className='remove'>
                 <MdRemoveCircleOutline></MdRemoveCircleOutline>
