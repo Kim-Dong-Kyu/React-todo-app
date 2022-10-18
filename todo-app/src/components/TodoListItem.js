@@ -7,16 +7,16 @@ import React from 'react';
 import './TodoListItem.scss'
 import cn from 'classnames'
 
-const TodoListItem = ({todo}) => {
+const TodoListItem = ({todo, onRemove}) => {
 
-    const {text , checked} = todo;
+    const {id, text , checked} = todo;
     return (
         <div className='TodoListItem'>
             <div className={cn('checkbox', {checked})}>
                 {checked ? <MdCheckBox></MdCheckBox> : <MdCheckBoxOutlineBlank></MdCheckBoxOutlineBlank>}
                 <div className='text'>{text}</div>             
             </div>
-            <div className='remove'>
+            <div className='remove' onClick={()=> onRemove(id)}>
                 <MdRemoveCircleOutline></MdRemoveCircleOutline>
             </div>         
         </div>
