@@ -22,6 +22,7 @@ const App = () => {
 
   const nextId = useRef(4);
 
+  /*일정 추가  event*/ 
   const onInsert = useCallback(
      text =>{
         const todo = {
@@ -34,6 +35,7 @@ const App = () => {
         }, [todos],
   );
 
+  /*삭제 event*/ 
   const onRemove = useCallback(
      id => {
         setTodos(todos.filter(todo => todo.id !== id));
