@@ -5,6 +5,20 @@ import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList';
 import { useCallback, useRef, useState } from 'react';
 
+
+/*렉 만들기 함수 */ 
+function createBulkTodos(){
+  const array = [];
+  for(let i = 1  ;  i <= 2500; i++){
+    array.push({
+      id :1, 
+      text : `할 일 ${i}`, 
+      checked : false,
+    });
+  }
+  return array;
+}
+
 const App = () => {
 
   const[todos, setTodos] = useState([
@@ -52,8 +66,6 @@ const App = () => {
       );
     }, [todos], 
   )
-
-
 
   return( 
     <TodoTemplate>
